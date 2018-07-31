@@ -1,18 +1,26 @@
+const Mailchimp = require('mailchimp-api-v3')
+const moment = require('moment')
+
 require('dotenv').config()
 
-const Mailchimp = require('mailchimp-api-v3')
 const mailchimp = new Mailchimp(process.env.MAILCHIMP_TOKEN)
 const logger = (err, response) => console.log(err, response)
 
-const options = {
-  type: 'regular',
-  recipeints: { list_id: 'f58dfbfd5d' },
-  settings: { folder_id: '3406b9472d' }
-}
-
 const createCampaign = () => {
   console.log('creating a new campaign')
-  return mailchimp.post('campaigns', options)
+  return mailchimp.post({
+    path: `/campaigns`,
+    body: {
+      type: 'regular',
+      recipients: { list_id: 'f58dfbfd5d' }, // internal variable
+      settings: {
+        folder_id: '3406b9472d', // internal variable
+        subject_line: 'React newsletter ' + moment().format('Do MMM'),
+        from_name: 'React Bangalore',
+        reply_to: 'siddharth.kshetrapal@gmail.com'
+      }
+    }
+  })
 }
 
 const putContents = (id, html) => {
