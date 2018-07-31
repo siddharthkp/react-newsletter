@@ -44,8 +44,13 @@ const sendCampaign = id => {
 const sendEmails = async html => {
   const { id } = await createCampaign()
   await putContents(id, html)
-  // await testCampaign(id)  // uncomment this line to test
-  await sendCampaign(id) // comment this line in test mode!
+
+  if (process.env.MODE === 'SAMPLE') await testCampaign(id)
+  else if (process.env.MODE === 'PRODUCTION' && process.env.TRAVIS_EVENT_TYPE === 'cron') {
+    await sendCampaign(id)
+  } else {
+    console.log('nothing to do here')
+  }
 }
 
 module.exports = sendEmails

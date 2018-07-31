@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'this is a silly placeholder'",
     "print": "MODE=PRINT node index.js",
     "sample": "MODE=SAMPLE node index.js",
-    "start": "node index.js"
+    "send": "MODE=PRODUCTION node index.js"
   },
   "keywords": [],
   "author": "siddharthkp",
