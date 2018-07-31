@@ -46,7 +46,7 @@ const sendEmails = async html => {
   await putContents(id, html)
 
   if (process.env.MODE === 'SAMPLE') await testCampaign(id)
-  else if (process.env.MODE === 'production') sendCampaign(id)
+  else if (process.env.MODE === 'PRODUCTION') sendCampaign(id)
   // else if (process.env.MODE === 'PRODUCTION' && process.env.TRAVIS_EVENT_TYPE === 'cron') {
   //   await sendCampaign(id)
   // } else {
