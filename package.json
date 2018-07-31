@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "print": "MODE=PRINT node index.js",
+    "print": "MODE=PRINT node index.js && open test.html",
     "sample": "MODE=SAMPLE node index.js",
     "send": "MODE=PRODUCTION node index.js"
   },

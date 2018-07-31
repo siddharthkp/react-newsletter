@@ -1,6 +1,7 @@
 body {
   font-family: '-apple-system', 'Helvetica', 'Arial', 'sans-serif';
   background: #fff;
+  line-height: 1.6;
 }
 h1 {
   font-size: 16px;
@@ -14,7 +15,7 @@ h2 {
   font-size: 16px;
   font-weight: normal;
   padding-left: 10px;
-  margin: 36px 0 18px;
+  margin: 36px 0 8px;
 }
 a {
   color: #2980b9;
@@ -23,6 +24,7 @@ a {
 p {
   font-size: 16px;
   padding-left: 10px;
+  margin: 0;
   color: #5a5a5a;
 }
 .header {
