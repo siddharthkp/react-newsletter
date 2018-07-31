@@ -1,0 +1,23 @@
+{
+  "name": "react-newsletter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "print": "MODE=PRINT node index.js",
+    "sample": "MODE=SAMPLE node index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "siddharthkp",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.18.0",
+    "mailchimp-api-v3": "1.12.0",
+    "moment": "2.19.1",
+    "showdown": "1.8.6"
+  },
+  "devDependencies": {
+    "dotenv": "6.0.0"
+  }
+}
